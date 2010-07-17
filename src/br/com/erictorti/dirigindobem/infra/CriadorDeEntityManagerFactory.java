@@ -16,7 +16,7 @@ public class CriadorDeEntityManagerFactory implements ComponentFactory<EntityMan
 	@PostConstruct
 	public void abre() {
 		this.factory = Persistence.createEntityManagerFactory("jpadirigindobem");
-		System.out.println( "Criada factory");
+		System.out.println("Criada factory");
 	}
 
 	@Override
@@ -28,7 +28,5 @@ public class CriadorDeEntityManagerFactory implements ComponentFactory<EntityMan
 	public void fecha() {
 		this.factory.close();
 	}
-	
-	
 
 }

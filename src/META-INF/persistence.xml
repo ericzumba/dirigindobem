@@ -3,9 +3,10 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
 
-	<persistence-unit name="jpadirigindobem">
+	<persistence-unit name="default">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.com.erictorti.dirigindobem.modelo.Veiculo</class>
+		<class>br.com.erictorti.dirigindobem.modelo.Mensagem</class>
 		
 		
 		<properties>
@@ -16,7 +17,7 @@
 			<property name="hibernate.format_sql" value="true"/>
 			
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/dirigindobem"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:9001/dirigindobem"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.jdbc.password" value=""/>
 

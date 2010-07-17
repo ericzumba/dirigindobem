@@ -19,11 +19,10 @@ import br.com.erictorti.dirigindobem.modelo.Veiculo;
 public class VeiculosController {
 	
 	private Result result;
-	private VeiculoDao dao;
-	
+	private VeiculoDao veiculoDao;
 	
 	public VeiculosController( Result result, VeiculoDao dao ){
-		this.dao = dao;
+		this.veiculoDao = dao;
 		this.result = result;
 	}
 
@@ -35,21 +34,20 @@ public class VeiculosController {
 	@Path("/veiculos")
 	@Post
 	public void adiciona( final Veiculo veiculo ) {
-		System.out.println( ">>adiciona novo veículo " + veiculo.getPlaca());
-		dao.getEntityManager().getTransaction().begin();
-		dao.adiciona( veiculo );
-		dao.getEntityManager().getTransaction().commit();
+		System.out.println( ">>adicionando novo veículo");
+		veiculoDao.getEntityManager().getTransaction().begin();
+		veiculoDao.adiciona( veiculo );
+		veiculoDao.getEntityManager().getTransaction().commit();
 		result.redirectTo(VeiculosController.class).lista();
 	}
 	
 	@Path("/veiculos")
 	@Get
 	public List<Veiculo> lista( ) {
-		List<Veiculo> lista = new ArrayList<Veiculo>();
 		System.out.println( ">>listando veículos" );
-		dao.getEntityManager().getTransaction().begin();
-		lista = dao.lista();
-		dao.getEntityManager().getTransaction().commit();
+		veiculoDao.getEntityManager().getTransaction().begin();
+		List<Veiculo> lista = veiculoDao.lista();
+		veiculoDao.getEntityManager().getTransaction().commit();
 		return lista;
 	}
 }

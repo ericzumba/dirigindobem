@@ -7,39 +7,38 @@ import javax.persistence.EntityManagerFactory;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.erictorti.dirigindobem.infra.JPAUtil;
-import br.com.erictorti.dirigindobem.modelo.Veiculo;
+import br.com.erictorti.dirigindobem.modelo.Mensagem;
 
 @Component
-public class VeiculoDao {
+public class MensagemDao {
 
 	private EntityManager em;
-	private DAO<Veiculo> dao;
+	private DAO<Mensagem> dao;
 
-	public VeiculoDao( ) {
+	public MensagemDao( ) {
 		EntityManagerFactory factory = new JPAUtil().getFactory();
 		this.em = factory.createEntityManager();
-		this.dao = new DAO<Veiculo>(this.em, Veiculo.class);
+		
+		this.dao = new DAO<Mensagem>(this.em, Mensagem.class);
 	}
-	
-	public void adiciona(Veiculo t) {		
+
+	public void adiciona(Mensagem t) {
 		dao.adiciona(t);
 	}
 
-	public Veiculo busca(Integer id) {
+	public Mensagem busca(Integer id) {
 		return dao.busca(id);
 	}
 
-	public List<Veiculo> lista() {
-		List<Veiculo> veiculos = dao.lista();
-		return veiculos;
-		
+	public List<Mensagem> lista() {
+		return dao.lista();
 	}
 
-	public void remove(Veiculo t) {
+	public void remove(Mensagem t) {
 		dao.remove(t);
 	}
-
-	public EntityManager getEntityManager() {
+	
+	public EntityManager getEntityManager( ){
 		return em;
 	}
 	

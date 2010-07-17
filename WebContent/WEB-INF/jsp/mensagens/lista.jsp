@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lista veículos</title>
+<title>Lista mensagens</title>
 </head>
 <body>
-	<p>Listando veículos</p>
 	<ul>
-	<c:forEach items="${veiculoList}" var="veiculo">
-		<li>${veiculo.placa}</li>
-	</c:forEach>
+		<c:forEach items="${mensagemList}" var="mensagem">
+			<li>${mensagem.conteudo}</li>
+		</c:forEach>
 	</ul>
+	
 </body>
 </html>
