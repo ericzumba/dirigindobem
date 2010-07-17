@@ -3,10 +3,8 @@ package br.com.erictorti.dirigindobem.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 
 import br.com.caelum.vraptor.ioc.Component;
-import br.com.erictorti.dirigindobem.infra.JPAUtil;
 import br.com.erictorti.dirigindobem.modelo.Mensagem;
 
 @Component
@@ -15,10 +13,8 @@ public class MensagemDao {
 	private EntityManager em;
 	private DAO<Mensagem> dao;
 
-	public MensagemDao( ) {
-		EntityManagerFactory factory = new JPAUtil().getFactory();
-		this.em = factory.createEntityManager();
-		
+	public MensagemDao(EntityManager em) {
+		this.em = em;
 		this.dao = new DAO<Mensagem>(this.em, Mensagem.class);
 	}
 
@@ -37,9 +33,9 @@ public class MensagemDao {
 	public void remove(Mensagem t) {
 		dao.remove(t);
 	}
-	
-	public EntityManager getEntityManager( ){
+
+	public EntityManager getEntityManager() {
 		return em;
 	}
-	
+
 }

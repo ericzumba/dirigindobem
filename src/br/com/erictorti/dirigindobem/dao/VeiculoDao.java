@@ -3,10 +3,8 @@ package br.com.erictorti.dirigindobem.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 
 import br.com.caelum.vraptor.ioc.Component;
-import br.com.erictorti.dirigindobem.infra.JPAUtil;
 import br.com.erictorti.dirigindobem.modelo.Veiculo;
 
 @Component
@@ -15,13 +13,12 @@ public class VeiculoDao {
 	private EntityManager em;
 	private DAO<Veiculo> dao;
 
-	public VeiculoDao( ) {
-		EntityManagerFactory factory = new JPAUtil().getFactory();
-		this.em = factory.createEntityManager();
+	public VeiculoDao(EntityManager em) {
+		this.em = em;
 		this.dao = new DAO<Veiculo>(this.em, Veiculo.class);
 	}
-	
-	public void adiciona(Veiculo t) {		
+
+	public void adiciona(Veiculo t) {
 		dao.adiciona(t);
 	}
 
@@ -32,7 +29,7 @@ public class VeiculoDao {
 	public List<Veiculo> lista() {
 		List<Veiculo> veiculos = dao.lista();
 		return veiculos;
-		
+
 	}
 
 	public void remove(Veiculo t) {
@@ -42,5 +39,5 @@ public class VeiculoDao {
 	public EntityManager getEntityManager() {
 		return em;
 	}
-	
+
 }

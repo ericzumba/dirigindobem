@@ -29,18 +29,14 @@ public class MensagensController {
 	@Path("/mensagens")
 	@Post
 	public void adiciona( Mensagem mensagem ) {
-		mensagemDao.getEntityManager().getTransaction().begin();
 		mensagemDao.adiciona( mensagem );
-		mensagemDao.getEntityManager().getTransaction().commit();
 		result.redirectTo(MensagensController.class).lista( );
 	}
 	
 	@Path("/mensagens")
 	@Get
 	public List<Mensagem> lista( ) {
-		mensagemDao.getEntityManager().getTransaction().begin();
 		List<Mensagem> lista = mensagemDao.lista();
-		mensagemDao.getEntityManager().getTransaction().commit();
 		return mensagemDao.lista();
 	}
 	
