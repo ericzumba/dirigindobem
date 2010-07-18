@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cadastro de Novo Veículo</title>
+<title>Alterando veículo</title>
 </head>
 <body>
-	<form action="<c:url value='/veiculos'/>" method="post">
+	<form action="<c:url value='/veiculo/${veiculo.id}'/>" method="post">
+		<input type="hidden" name="_method" value="put" />
 		<label for="veiculo.placa" />Placa</label>
-		<input type="text" name="veiculo.placa" id="veiculo.placa"/>	
-		
-		<input type="submit" value="Novo veículo" />
+		<input type="text" name="veiculo.placa" id="veiculo.placa" value="${veiculo.placa}"/>	
+		<input type="submit" value="Altera veículo" />
 	</form>
 </body>
 </html>

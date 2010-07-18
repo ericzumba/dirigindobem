@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cadastro de nova Mensagem</title>
+<title>Alterando mensagem</title>
 </head>
 <body>
-	<form action="<c:url value='/mensagens'/>" method="post">
+	<form action="<c:url value='/mensagem/${mensagem.id}'/>" method="post">
+		<input type="hidden" name="_method" value="put" />
 		<label for="mensagem.conteudo" />Conteúdo</label>
-		<input type="text" name="mensagem.conteudo" id="mensagem.conteudo"/>	
-		
-		<input type="submit" value="Nova mensagem" />
+		<input type="text" name="mensagem.conteudo" id="mensagem.conteudo" value="${mensagem.conteudo}"/>	
+		<input type="submit" value="Altera mensagem" />
 	</form>
 </body>
 </html>

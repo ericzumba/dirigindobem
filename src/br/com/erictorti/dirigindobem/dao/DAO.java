@@ -18,6 +18,10 @@ public class DAO<T> {
 	public void adiciona( T t ) {
 		this.em.persist(t);
 	}
+
+	public void atualiza( T t ) {
+		this.em.merge(t);
+	}
 	
 	public void remove( T t ) {
 		this.em.remove(t);

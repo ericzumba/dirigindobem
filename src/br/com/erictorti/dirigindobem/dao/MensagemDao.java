@@ -11,6 +11,7 @@ import br.com.erictorti.dirigindobem.modelo.Mensagem;
 public class MensagemDao {
 
 	private EntityManager em;
+
 	private DAO<Mensagem> dao;
 
 	public MensagemDao(EntityManager em) {
@@ -22,6 +23,10 @@ public class MensagemDao {
 		dao.adiciona(t);
 	}
 
+	public void atualiza(Mensagem t) {
+		dao.atualiza(t);
+	}
+	
 	public Mensagem busca(Integer id) {
 		return dao.busca(id);
 	}
@@ -32,10 +37,6 @@ public class MensagemDao {
 
 	public void remove(Mensagem t) {
 		dao.remove(t);
-	}
-
-	public EntityManager getEntityManager() {
-		return em;
 	}
 
 }

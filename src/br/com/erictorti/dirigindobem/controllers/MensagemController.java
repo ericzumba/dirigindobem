@@ -5,32 +5,46 @@ import java.util.List;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.erictorti.dirigindobem.dao.MensagemDao;
 import br.com.erictorti.dirigindobem.modelo.Mensagem;
 
 @Resource
-public class MensagensController {
+public class MensagemController {
 
 	private Result result;
 	private MensagemDao mensagemDao;
 
-	public MensagensController(Result result, MensagemDao mensagemDao) {
+	public MensagemController(Result result, MensagemDao mensagemDao) {
 		this.result = result;
 		this.mensagemDao = mensagemDao;
 	}
 	
-	@Path("/mensagens/nova")
+	@Path("/mensagem/nova")
 	public void formulario( ) {
 		System.out.println( ">> formulário para nova mensagem");
 	}
 	
-	@Path("/mensagens")
+	@Path("/mensagem")
 	@Post
 	public void adiciona( Mensagem mensagem ) {
 		mensagemDao.adiciona( mensagem );
-		result.redirectTo(MensagensController.class).lista( );
+		result.redirectTo(MensagemController.class).lista( );
+	}
+	
+	@Path("/mensagem/{id}")
+	@Get
+	public Mensagem edita( Integer id ) {
+		return mensagemDao.busca(id);
+	}
+	
+	@Path("/mensagem/{mensagem.id}") 
+	@Put
+	public void atualiza( Mensagem mensagem ){
+		mensagemDao.atualiza(mensagem);
+		result.redirectTo(MensagemController.class).lista( );
 	}
 	
 	@Path("/mensagens")

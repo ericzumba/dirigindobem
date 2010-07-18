@@ -22,6 +22,14 @@ public class VeiculoDao {
 		dao.adiciona(t);
 	}
 
+	public void atualiza(Veiculo t) {
+		dao.atualiza(t);
+	}
+
+	public void remove(Veiculo t) {
+		dao.remove(t);
+	}
+	
 	public Veiculo busca(Integer id) {
 		return dao.busca(id);
 	}
@@ -29,15 +37,6 @@ public class VeiculoDao {
 	public List<Veiculo> lista() {
 		List<Veiculo> veiculos = dao.lista();
 		return veiculos;
-
-	}
-
-	public void remove(Veiculo t) {
-		dao.remove(t);
-	}
-
-	public EntityManager getEntityManager() {
-		return em;
 	}
 
 }
