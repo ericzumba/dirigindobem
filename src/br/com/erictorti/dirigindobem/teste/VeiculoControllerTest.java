@@ -35,14 +35,55 @@ public class VeiculoControllerTest {
 
 		assertEquals(1, constraintViolations.size());
 	}
+
+	@Test
+	public void naoAceitaPlacaComMaisDeOitoCaracteres() {
+		Veiculo veiculo = new Veiculo();
+		veiculo.setPlaca("um-monte-de-caracteres");
+
+		Set<ConstraintViolation<Veiculo>> constraintViolations = validator
+				.validate(veiculo);
+		for (ConstraintViolation<Veiculo> violation : constraintViolations) {
+			System.out.println(violation.getMessage());
+			System.out.println(violation.getMessageTemplate());
+			System.out.println(violation.getRootBean());
+			System.out.println(violation.getInvalidValue());
+		}
+		assertEquals(1, constraintViolations.size());
+	}
 	
 	@Test
-	public void naoAceitaPlacaVazia()
-	{
+	public void naoAceitaPlacaComMenosDeOitoCaracteres() {
 		Veiculo veiculo = new Veiculo();
 		veiculo.setPlaca("");
+
+		Set<ConstraintViolation<Veiculo>> constraintViolations = validator
+				.validate(veiculo);
 		
-		Set<ConstraintViolation<Veiculo>> constraintViolations = validator.validate(veiculo);
+		for (ConstraintViolation<Veiculo> violation : constraintViolations) {
+			System.out.println(violation.getMessage());
+			System.out.println(violation.getMessageTemplate());
+			System.out.println(violation.getRootBean());
+			System.out.println(violation.getInvalidValue());
+		}
+		
+		assertEquals(1, constraintViolations.size());
+	}
+	
+	@Test
+	public void naoAceitaPlacaQueNaoAtendeARegex() {
+		Veiculo veiculo = new Veiculo();
+		veiculo.setPlaca("AA5151");
+
+		Set<ConstraintViolation<Veiculo>> constraintViolations = validator
+				.validate(veiculo);
+		
+		for (ConstraintViolation<Veiculo> violation : constraintViolations) {
+			System.out.println(violation.getMessage());
+			System.out.println(violation.getMessageTemplate());
+			System.out.println(violation.getRootBean());
+			System.out.println(violation.getInvalidValue());
+		}
 		
 		assertEquals(1, constraintViolations.size());
 	}
