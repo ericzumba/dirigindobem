@@ -13,7 +13,7 @@
 <body>
 <div class="ui-widget ui-form">
 	<div class="ui-widget-header ui-corner-all">
-		<h2>Login Form</h2>
+		<h2>Dirige bem?</h2>
 	</div>
 	<div class="ui-widget-content ui-corner-all">
 		<form action="#" class="ui-helper-clearfix">
