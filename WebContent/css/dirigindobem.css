@@ -1,0 +1,74 @@
+#main {
+	min-height: 100%;
+}
+
+#top {
+	background-color: lightGrey;
+	height: 120px;
+	border-bottom: 3px solid yellow;
+}
+
+#content {
+	margin: 0 auto;
+	background: no-repeat scroll 40px 40px transparent;	
+	min-height: 650px;
+	padding: 20px;
+	width: 890px;
+}
+
+#footer {
+	background-color: lightGrey;
+	border-top: 3px solid yellow;
+	height: 50px;
+}
+
+input {
+	height: 55px;
+	padding: 0 10px;
+}
+
+button {
+	height: 61px;
+}
+
+
+#veiculo_placa {
+	width: 100px;
+}
+
+#mensagem_conteudo {
+	width: 530px;
+}
+
+#submita_mensagem {
+	width: 150px;	
+}
+
+#mensagens {
+	min-height: 195px;
+}
+
+#ad {
+	float: left;
+	min-height: 255px;
+	width: 490px;
+}
+
+#cadastro_email {
+	float: left;
+	margin-left: 20px;
+	padding-bottom: 40px;
+	width: 296px;
+}
+
+#usuario_email {
+	width: 267px;	
+}
+
+#usuario_placa {
+	width: 195px;	
+}
+
+#adiciona_cadastro h2 {
+	padding-bottom: 20px;	
+}
