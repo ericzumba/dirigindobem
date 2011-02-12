@@ -5,29 +5,37 @@
 <head>
 <script type="text/javascript" src="<c:url value='/js/jquery-1.4.4.min.js'/>" ></script>
 <script type="text/javascript" src="<c:url value='/js/jquery-ui-1.8.9.custom.min.js'/>" ></script>
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/reset.css'/>"></link>
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/dirigindobem.css'/>"></link>
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/smoothness/jquery-ui-1.8.9.custom.css'/>"></link>
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/ui.form.css'/>"></link>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Dirigindo bem?</title>
 </head>
 <body>
-<div class="ui-widget ui-form">
-	<div class="ui-widget-header ui-corner-all">
-		<h2>Dirige bem?</h2>
-	</div>
-	<div class="ui-widget-content ui-corner-all">
-		<form action="#" class="ui-helper-clearfix">
-
-			<label class="ui-helper-reset">Username</label>
-			<div class="ui-state-error ui-corner-all">
-				<input type="text"/>
-				<div class="ui-icon-alert"></div>
-				<p class="ui-helper-reset ui-state-error-text">Required field</p>
+<div id="main">
+	<div id="top">
+	</div><!-- top -->
+	<div id="content">
+		<div class="ui-widget ui-form">
+			<div class="ui-widget-header ui-corner-all">
+				<h2>Dirige bem?</h2>
 			</div>
-		</form>
-	</div>
-</div>
-	
-
+			<div class="ui-widget-content ui-corner-all">
+				<form action="#" class="ui-helper-clearfix">
+<!--					<label class="ui-helper-reset">Username</label>-->
+<!--					<div class="ui-state-error ui-corner-all">-->
+						<input type="text" name="veiculo.placa" id="veiculo_placa"/>
+<!--						<div class="ui-icon-alert"></div>-->
+<!--						<p class="ui-helper-reset ui-state-error-text">Required field</p>-->
+<!--					</div><!-- state-error -->
+						<input type="text" name="mensagem.conteudo" id="mensagem_conteudo"/>
+				</form>
+			</div>
+		</div>
+	</div><!-- content -->
+</div><!--main-->
+<div id="footer">
+</div><!-- footer -->
 </body>
 </html>
