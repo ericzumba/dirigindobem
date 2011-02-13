@@ -5,7 +5,7 @@
 <head>
 <script type="text/javascript" src="<c:url value='/js/jquery-1.4.4.min.js'/>" ></script>
 <script type="text/javascript" src="<c:url value='/js/jquery-ui-1.8.9.custom.min.js'/>" ></script>
-<script type="text/javascript" src="<c:url value='/js/jquery.hint.js'/>" ></script>
+<script type="text/javascript" src="<c:url value='/js/jquery-placeholder.js'/>" ></script>
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/reset.css'/>"></link>
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/dirigindobem.css'/>"></link>
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/smoothness/jquery-ui-1.8.9.custom.css'/>"></link>
@@ -22,7 +22,7 @@
 		<div class="ui-widget ui-form">
 			<div class="ui-widget-content ui-corner-all">
 				<form action="#" class="ui-helper-clearfix" id="adiciona_mensagem">
-					<input type="text" name="veiculo.placa" id="veiculo_placa" title="Teste"/>
+					<input type="text" name="veiculo.placa" id="veiculo_placa" placeholder="Teste"/>
 					<input type="text" name="mensagem.conteudo" id="mensagem_conteudo"/>
 					<button id="submita_mensagem" class="ui-button ui-corner-all ui-button-text-only">
 						<span class="ui-button-text">POSTAR!</span>
@@ -52,3 +52,10 @@
 </div><!-- footer -->
 </body>
 </html>
+<script type="text/javascript">
+	$("#veiculo_placa").placeHolder({"text" : "ABC-1234"});
+	$("#usuario_email").placeHolder({"text" : "Ei! Você dirige muito bem! Parabéns!"});
+	$("#usuario_email").placeHolder({"text" : "seu@email.com.br"});
+	$("#usuario_placa").placeHolder({"text" : "ABC-1234"});
+	
+</script>
