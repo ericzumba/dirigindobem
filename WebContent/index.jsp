@@ -21,7 +21,7 @@
 	<div id="content">
 		<div class="ui-widget ui-form">
 			<div class="ui-widget-content ui-corner-all">
-				<form action="#" class="ui-helper-clearfix" id="adiciona_mensagem">
+				<form action="<c:url value='/mensagem' />" class="ui-helper-clearfix" id="adiciona_mensagem">
 					<input type="text" name="veiculo.placa" id="veiculo_placa" placeholder="Teste"/>
 					<input type="text" name="mensagem.conteudo" id="mensagem_conteudo"/>
 					<button id="submita_mensagem" class="ui-button ui-corner-all ui-button-text-only">
@@ -54,7 +54,7 @@
 </html>
 <script type="text/javascript">
 	$("#veiculo_placa").placeHolder({"text" : "ABC-1234"});
-	$("#usuario_email").placeHolder({"text" : "Ei! Você dirige muito bem! Parabéns!"});
+	$("#mensagem_conteudo").placeHolder({"text" : "Ei! Você dirige muito bem! Parabéns!"});
 	$("#usuario_email").placeHolder({"text" : "seu@email.com.br"});
 	$("#usuario_placa").placeHolder({"text" : "ABC-1234"});
 	

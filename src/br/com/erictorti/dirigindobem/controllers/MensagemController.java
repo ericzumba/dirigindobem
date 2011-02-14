@@ -1,7 +1,5 @@
 package br.com.erictorti.dirigindobem.controllers;
 
-import java.util.List;
-
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;

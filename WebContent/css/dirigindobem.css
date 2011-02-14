@@ -3,9 +3,9 @@
 }
 
 #top {
-	background-color: lightGrey;
+	background-color: white;
 	height: 120px;
-	border-bottom: 3px solid yellow;
+	border-bottom: 3px solid white;
 }
 
 #content {
@@ -17,8 +17,8 @@
 }
 
 #footer {
-	background-color: lightGrey;
-	border-top: 3px solid yellow;
+	background-color: white;
+	border-top: 3px solid white;
 	height: 50px;
 }
 
